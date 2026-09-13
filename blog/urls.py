@@ -4,5 +4,6 @@ from .views import *
 app_name = 'blog'
 
 urlpatterns = [
-    path ('' , index , name='index')
+    path ('' , index , name='index'),
+    path ('single/' , single , name='single'),
 ]
