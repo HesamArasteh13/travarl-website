@@ -1,9 +1,10 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import Post
 
 def index(request):
-    return render (request , 'blog/blog-home.html')
+    posts = Post.objects.all()
+    context = {'posts':posts}
+    return render (request , 'blog/blog-home.html', context)
 
 def single(request):
     return render (request , 'blog/blog-single.html')
