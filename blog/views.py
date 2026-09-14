@@ -8,3 +8,8 @@ def index(request):
 
 def single(request):
     return render (request , 'blog/blog-single.html')
+
+def test (request , test):
+
+    context = {'outcomming':test}
+    return render (request , 'test.html' , context)
