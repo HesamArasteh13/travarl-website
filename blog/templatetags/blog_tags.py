@@ -13,3 +13,6 @@ def function ():
     posts = Post.objects.filter(status=1)
     return posts
 
+@register.filter
+def snipets (value , arg=50):
+    return value[:arg]+ ' ...'
