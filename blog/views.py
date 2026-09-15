@@ -11,3 +11,5 @@ def single(request , test):
     context = {'posts':posts}
     return render (request , 'blog/blog-single.html' , context)
 
+def test (request):
+    return render (request , 'test.html')
