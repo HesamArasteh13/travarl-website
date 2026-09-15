@@ -9,8 +9,9 @@
 <body>
     <h1>Testing Page</h1>
     <p>test: {% total_posts %}</p>
-    {% for post in total_post %}
-    {{post}}
+    {% posts as totalposts %}
+    {% for post in totalposts %}
+        <p>{{post}}</p>
     {% endfor %}
 </body> 
 </html>

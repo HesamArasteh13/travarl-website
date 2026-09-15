@@ -8,8 +8,8 @@ def function ():
     posts = Post.objects.filter(status= 1).count()
     return posts
 
-register.simple_tag(name='posts')
+@register.simple_tag(name='posts')
 def function ():
     posts = Post.objects.filter(status=1)
-    reversed posts
+    return posts
 
