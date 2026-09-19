@@ -10,3 +10,8 @@ def about(request):
 
 def contact (request):
     return render (request , 'home_page/contact.html')
+
+def test (request):
+    if request.method == 'POST':
+        print (request.POST.get('name'))
+    return render (request , 'test.html')
