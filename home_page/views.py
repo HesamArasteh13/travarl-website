@@ -12,6 +12,9 @@ def contact (request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
+            name = form.cleaned_data['name']
+            name = 'guest'
+            print(name)
             form.save()
             messages.add_message(request , messages.SUCCESS , 'your ticket sumbited succesfully')
         else :
@@ -25,6 +28,7 @@ def newsletter(request):
         form = NewsletterForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS , 'your email submited succesfully')
             return HttpResponseRedirect('/')
         return HttpResponseRedirect('/')
 
