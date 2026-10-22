@@ -8,7 +8,12 @@ def about(request):
     return render (request , 'home_page/about.html')
 
 def contact (request):
-    return render (request , 'home_page/contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+    form = ContactForm()
+    return render (request , 'home_page/contact.html' , {'form':form})
 
 def test (request):
     if request.method == 'POST':
